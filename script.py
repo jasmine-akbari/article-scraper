@@ -64,8 +64,4 @@ print(df)
 #    for row in df:
 #         writer.writerow(row)
 
-f= open('./dist/article1.cv', 'wb')
-csv_writer = csv.writer(f)
-for i in df:
-    csv_writer.writerow(i)
-f.close()
+df.to_csv('article_1.csv')
