@@ -3,6 +3,8 @@ import numpy as np
 import PyPDF2
 import textract
 import re
+# outputs collected data to csv file for readability
+import csv
 
 filename ='./assets/articles/20.08.07.Blockchain.Lecture1.pdf' 
 
@@ -27,13 +29,15 @@ else:
 
 
 print(type(text))
+# commented out for testing
 # text = text.encode('ascii','ignore').lower()
 keywords = re.findall(r'[a-zA-Z]\w+',text)
 
+# data/words collected from the article
 df = pd.DataFrame(list(set(keywords)),columns=['keywords'])
 
 
-
+# formatting for data collected
 def weightage(word,text,number_of_documents=1):
     word_list = re.findall(word,text)
     number_of_times_word_appeared =len(word_list)
@@ -51,4 +55,17 @@ df['tf_idf'] = df['keywords'].apply(lambda x: weightage(x,text)[3])
 
 df = df.sort_values('tf_idf',ascending=True)
 df.head(25)
+
 print(df)
+
+# function to create the csv file from the table data created
+# with open ('article1.cv','wb') as file:
+#    writer = csv.writer(file)
+#    for row in df:
+#         writer.writerow(row)
+
+f= open('./dist/article1.cv', 'wb')
+csv_writer = csv.writer(f)
+for i in df:
+    csv_writer.writerow(i)
+f.close()
