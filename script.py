@@ -4,7 +4,7 @@ import PyPDF2
 import textract
 import re
 
-filename ='JavaBasics-notes.pdf' 
+filename ='./assets/articles/20.08.07.Blockchain.Lecture1.pdf' 
 
 pdfFileObj = open(filename,'rb')               
 pdfReader = PyPDF2.PdfFileReader(pdfFileObj)   
@@ -23,10 +23,11 @@ if text != "":
     text = text
  
 else:
-    text = textract.process('/Users/jasmineakbari/Documents/projects/article-scraper/assets/articles/20.08.07.Blockchain.Lecture1.pdf', method='tesseract', language='eng')
+    text = textract.process('http://bit.ly/epo_keyword_extraction_document', method='tesseract', language='eng')
 
 
-text = text.encode('ascii','ignore').lower()
+print(type(text))
+# text = text.encode('ascii','ignore').lower()
 keywords = re.findall(r'[a-zA-Z]\w+',text)
 
 df = pd.DataFrame(list(set(keywords)),columns=['keywords'])
@@ -50,3 +51,4 @@ df['tf_idf'] = df['keywords'].apply(lambda x: weightage(x,text)[3])
 
 df = df.sort_values('tf_idf',ascending=True)
 df.head(25)
+print(df)
