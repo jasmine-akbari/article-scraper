@@ -27,7 +27,7 @@ if text != "":
 
 # converts images to text using textract
 else:
-    text = textract.process('http://bit.ly/epo_keyword_extraction_document', method='tesseract', language='eng')
+    text = textract.process('./assets/articles/20.08.07.Blockchain.Lecture1.pdf', method='tesseract', language='eng')
 
 
 print(type(text))
