@@ -4,8 +4,10 @@ import PyPDF2
 import textract
 import re
 
+# import inquirer
+
 # File to scrape text from
-filename ='./assets/articles/20.08.07.Blockchain.Lecture1.pdf' 
+filename ='../../articles_for_scraper/PDF/20.08.07.Blockchain.Lecture1.pdf' 
 
 pdfFileObj = open(filename,'rb')               
 pdfReader = PyPDF2.PdfFileReader(pdfFileObj)   
@@ -27,10 +29,11 @@ if text != "":
 
 # converts images to text using textract
 else:
-    text = textract.process('./assets/articles/20.08.07.Blockchain.Lecture1.pdf', method='tesseract', language='eng')
+    text = textract.process('../../articles_for_scraper/PDF/20.08.07.Blockchain.Lecture1.pdf', method='tesseract', language='eng')
 
 
-print(type(text))
+# commented out for testing #
+# print(type(text))
 # commented out for testing #
 # text = text.encode('ascii','ignore').lower()
 #
