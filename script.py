@@ -63,4 +63,4 @@ df.head(25)
 print(df)
 
 # function to create the csv file from the dataframe created
-df.to_csv('article_1.csv')
+df.to_csv('./dist/article_1.csv')
