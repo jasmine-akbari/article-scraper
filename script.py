@@ -3,11 +3,11 @@ import numpy as np
 import PyPDF2
 import textract
 import re
-
-# import inquirer
+import os
 
 # File to scrape text from
-filename ='../../articles_for_scraper/PDF/20.08.07.Blockchain.Lecture1.pdf' 
+filename = [name for name in os.listdir("../../articles/") if name.endswith(".pdf")]
+# '../../articles_for_scraper/PDF/20.08.07.Blockchain.Lecture1.pdf' 
 
 pdfFileObj = open(filename,'rb')               
 pdfReader = PyPDF2.PdfFileReader(pdfFileObj)   
@@ -16,6 +16,7 @@ num_pages = pdfReader.numPages
 
 count = 0
 text = ""
+desiredWords = ""
 
 # while to loop to cycle through pages
 while count < num_pages:                       
@@ -29,7 +30,7 @@ if text != "":
 
 # converts images to text using textract
 else:
-    text = textract.process('../../articles_for_scraper/PDF/20.08.07.Blockchain.Lecture1.pdf', method='tesseract', language='eng')
+    text = textract.process(filename, method='tesseract', language='eng')
 
 
 # commented out for testing #

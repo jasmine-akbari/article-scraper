@@ -10,7 +10,7 @@ Requires the following installations to terminal:
 - pandas
 - PyPDF2
 - regex
-- inquirers
+- inquirer
 
 ## Contributions
 
