@@ -1,6 +1,6 @@
 # article-scraper
 
-Running 'python3 script.py" produces article_1.csv displaying all words found in saved pdf document. Orders them in ascending order by term frequency and weight(importance).
+Running 'python3 script.py' produces article_1.csv displaying all words found in saved pdf document. Orders them in ascending order by term frequency and weight(importance).
 
 ## Technologies
 
