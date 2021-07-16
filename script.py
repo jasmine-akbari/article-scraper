@@ -3,11 +3,9 @@ import numpy as np
 import PyPDF2
 import textract
 import re
-import os
 
 # File to scrape text from
-filename = [name for name in os.listdir("../../articles/") if name.endswith(".pdf")]
-# '../../articles_for_scraper/PDF/20.08.07.Blockchain.Lecture1.pdf' 
+filename ='../../articles/PDF/20.08.07.Blockchain.Lecture1.pdf' 
 
 pdfFileObj = open(filename,'rb')               
 pdfReader = PyPDF2.PdfFileReader(pdfFileObj)   
@@ -30,7 +28,7 @@ if text != "":
 
 # converts images to text using textract
 else:
-    text = textract.process(filename, method='tesseract', language='eng')
+    text = textract.process('../../articles/PDF/20.08.07.Blockchain.Lecture1.pdf', method='tesseract', language='eng')
 
 
 # commented out for testing #
@@ -61,10 +59,11 @@ df['tf'] = df['keywords'].apply(lambda x: weightage(x,text)[1])
 df['idf'] = df['keywords'].apply(lambda x: weightage(x,text)[2])
 df['tf_idf'] = df['keywords'].apply(lambda x: weightage(x,text)[3])
 
-df = df.sort_values('tf_idf',ascending=True)
-df.head(25)
+df = df.sort_values('tf_idf',ascending=False)
+# df.head(25)
+df_max_res = df.head(15)
 
-print(df)
+print(df_max_res)
 
 # function to create the csv file from the dataframe created
-df.to_csv('./dist/article_1.csv')
+df_max_res.to_csv('./dist/article_1.csv')
