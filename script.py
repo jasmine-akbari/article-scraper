@@ -4,28 +4,11 @@ import PyPDF2
 import textract
 import re
 
+from colorama import init, Fore, Back, Style
 
-# prompts to determine file to scrape 
-import inquirer
+givenFile = input(Fore.CYAN + "What is the name of the PDF File you would like to scrape?")
+filename = f'../../articles/PDF/{givenFile}.pdf'
 
-questions = [
-    inquirer.Text('welcome',
-                message="Welcome to Amesite's Article Keyword Scraper!(Press enter to continue)"),
-    inquirer.Path("file", path_type=inquirer.Path.FILE, message="What did you name the PDF" 
-    " you would like to scrape?"),
-    inquirer.Text('confirm',
-                message="Press enter to continue with scrape or ctrl c to cancel."),
-]
-
-givenFile = inquirer.Path(questions)
-
-
-
-# File to scrape text from
-try:
-    filename ='../../articles/PDF/' + givenFile + '.pdf'
-except: 
-    print('Unable to locate a pdf file with this name, check your filename and try again!')
 
 pdfFileObj = open(filename,'rb')               
 pdfReader = PyPDF2.PdfFileReader(pdfFileObj)   
@@ -37,18 +20,15 @@ text = ""
 desiredWords = ""
 
 # while to loop to cycle through pages
-try:
-    while count < num_pages:                       
-        pageObj = pdfReader.getPage(count)
-        count +=1
-        text += pageObj.extractText()
-    if text != "":
-        text = text
-    # converts images to text using textract
-    else:
-        text = textract.process('../../articles/PDF/' + givenFile + '.pdf', method='tesseract', language='eng')
-except: 
-    print('Unable to read pdf, confirm the document type and try again!')
+while count < num_pages:                       
+    pageObj = pdfReader.getPage(count)
+    count +=1
+    text += pageObj.extractText()
+if text != "":
+    text = text
+# converts images to text using textract
+else:
+    text = textract.process('../../articles/PDF/' + givenFile + '.pdf', method='tesseract', language='eng')
 
 
 keywords = re.findall(r'[a-zA-Z]\w+',text)
@@ -73,14 +53,14 @@ df['tf'] = df['keywords'].apply(lambda x: weightage(x,text)[1])
 df['idf'] = df['keywords'].apply(lambda x: weightage(x,text)[2])
 df['tf_idf'] = df['keywords'].apply(lambda x: weightage(x,text)[3])
 
-try:
-    df = df.sort_values('tf_idf',ascending=False)
-    df_max_res = df.head(15)
-except:
-    print('No relevant keywords found for this article.')
+
+df = df.sort_values('tf_idf',ascending=False)
+df_max_res = df.head(15)
 
 print(df_max_res)
 
 # function to create the csv file from the dataframe created
 df_max_res.to_csv('./dist/article_1.csv')
-print('Please check your repositories /dist folder for the csv file with relevant keywords!')
+print(Fore.GREEN + 'Please check your repositories /dist folder for the csv file with relevant keywords!')
+
+init()
