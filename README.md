@@ -9,8 +9,8 @@ Requires the following installations to terminal:
 - textract
 - pandas
 - PyPDF2
-- regex
 - colorama
+- gensim v3.8.3
 
 ## Contributions
 
