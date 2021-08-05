@@ -1,13 +1,15 @@
 # article-scraper
 
-Article Scraper is a CLI(Command Line Interface) application for the purpose of extracting keywords from PDF Files. By typing 'python3 script.py' in your VS Code or mac terminal while in the working directory of the application will prompt the user to provide a PDF file for key word extraction. Upon successful delivery of a PDF file, the application will produces a CSV document displaying 15 relevant keywords found from the locally saved PDF document. The keywords are displayed in ascending order by relevance.
+Article Scraper is a CLI(Command Line Interface) application for the purpose of extracting keywords from PDF Files. 
+
+By typing 'python3 script.py' in your VS Code or mac terminal while in the working directory of the application will prompt the user to provide a PDF file for key word extraction. Upon successful delivery of a PDF file, the application will produces a CSV document displaying 15 relevant keywords found from the locally saved PDF document. The keywords are displayed in ascending order by relevance.
 
 ## Table of Contents
 
-[Technologies](Technologies)
-[Installation](Installation)
-[Usage](Usage)
-[Contributions](Contributions)
+- [Technologies](Technologies)
+- [Installation](Installation)
+- [Usage](Usage)
+- [Contributions](Contributions)
 
 ## Technologies
 
