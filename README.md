@@ -1,6 +1,8 @@
 # article-scraper
 
-Running 'python3 script.py' produces article_1.csv displaying all words found in saved pdf document. Orders them in ascending order by term frequency and weight(importance).
+Running 'python3 script.py' in your VS Code terminal produces a CSV document displaying all words found from a provided, locally saved pdf document. The keywords are in ascending order of relevance to the article.
+
+## Table of Contents
 
 ## Technologies
 
@@ -9,8 +11,10 @@ Requires the following installations to terminal:
 - textract
 - pandas
 - PyPDF2
-- colorama
+- colorama (optional)
 - gensim v3.8.3
+
+## Usage
 
 ## Contributions
 
