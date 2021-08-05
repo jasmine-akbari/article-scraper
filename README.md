@@ -6,10 +6,10 @@ By typing 'python3 script.py' in your VS Code or mac terminal while in the worki
 
 ## Table of Contents
 
-- [Technologies](Technologies)
-- [Installation](Installation)
-- [Usage](Usage)
-- [Contributions](Contributions)
+- [Technologies](#Technologies)
+- [Installation](#Installation)
+- [Usage](#Usage)
+- [Contributions](#Contributions)
 
 ## Technologies
 
