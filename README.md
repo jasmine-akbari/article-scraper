@@ -24,7 +24,7 @@ Requires the following installations to terminal:
 1. Clone the Repo
 Clone this repository to your local machine(PC). Click on the clipboard icon to copy the URL for git cloning.
 
-![step1](git-clone-img.PNG)
+![step1](/src/images/git-clone-img.png)
 
 2. Open your Terminal (Mac)
 On your Mac, do one of the following: Click the Launchpad icon in the Dock, type Terminal in the search field, then click Terminal. 
@@ -33,7 +33,7 @@ OR
 
 In the Finder , open the /Applications/Utilities folder, then double-click Terminal.
 
-![step2](launchpad-img.PNG) ![step2b](terminal-icon-img.PNG)
+![step2](/src/images/launchpad-img.png) ![step2b](/src/images/terminal-icon-img.png)
 
 3. Type 'ls' to see your accesible folders. You can use 'cd ' followed by the name of the folder you wish to navigate into to save your article scraper. (To ensure the application runs properly, save your article PDF's in the same folder).
 
