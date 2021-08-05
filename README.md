@@ -21,8 +21,24 @@ Requires the following installations to terminal:
 - gensim v3.8.3
 
 ## Installation
-1. 
+1. Clone the Repo
+Clone this repository to your local machine(PC). Click on the clipboard icon to copy the URL for git cloning.
 
+![step1](git-clone-img.png)
+
+2. Open your Terminal (Mac)
+On your Mac, do one of the following: Click the Launchpad icon in the Dock, type Terminal in the search field, then click Terminal. 
+
+OR
+
+In the Finder , open the /Applications/Utilities folder, then double-click Terminal.
+
+![step2](launchpad-img.png) ![step2b](terminal-icon-img.png)
+
+3. Type 'ls' to see your accesible folders. You can use 'cd <filename>' to navigate to the folder where you 
+want to save your article scraper. (To ensure the application runs properly, save your article PDF's in the same folder).
+
+Commonly repositories are saved in a 'code' file in the documents folder. To make a file, type 'mkdir <name of the file>'.
 
 ## Usage
 
