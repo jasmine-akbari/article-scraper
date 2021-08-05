@@ -16,15 +16,15 @@ warnings.filterwarnings("ignore")
 
 # function prompt user
 def init():
-    print(Fore.MAGENTA + 'Welcome to Article Scraper! This application will search\nany given PDF File for important Key Words and Topics. \n')
+    print(Fore.MAGENTA + Style.BRIGHT + 'Welcome to Article Scraper! This application will search\nany given PDF File for important Key Words and Topics. \n')
 
     try:
-        givenFile = input(Fore.MAGENTA + 'Please type the name of the PDF File you would like to search to begin.\n' + Fore.WHITE + 
+        givenFile = input(Fore.MAGENTA + Style.BRIGHT + 'Please type the name of the PDF File you would like to search to begin.\n' + Fore.WHITE + 
         '(Please make sure the PDF File you would like to search is saved in the same location you saved this application)')
         extract_keywords(givenFile)
     except:
-        print(Fore.RED + 'Sorry! The file name you provided does not exist, please confirm your file name and file type before you try again.')
-        try_again = input(Fore.MAGENTA + 'Would you like to try again? (Type yes|y to continue or the enter key to exit)')
+        print(Fore.RED + Style.NORMAL + 'Sorry! The file name you provided does not exist, please confirm your file name and file type before you try again.')
+        try_again = input(Fore.MAGENTA + Style.BRIGHT + 'Would you like to try again? (Type yes|y to continue or the enter key to exit)')
         rerun_script(try_again)
 
 
@@ -35,7 +35,7 @@ def rerun_script(try_again):
     if response == 'yes' or response == 'y':
         init()
     else:
-        print(Fore.GREEN + 'Thank you for using Article Scraper, have a good day!')
+        print(Fore.WHITE + Style.BRIGHT + 'Thank you for using Article Scraper, have a good day!')
         return
 
 
@@ -79,9 +79,9 @@ def create_csv(text):
 
         # create file with keywords
         df_max_res.to_csv('./dist/article_1.csv')
-        print(Fore.GREEN + 'Success! Please check this application\'s "dist" folder for the csv file created with relevant keywords!')
+        print(Fore.MAGENTA + Style.BRIGHT + 'Success! Please check this application\'s "dist" folder for the csv file created with relevant keywords!')
     except:
-        print(Fore.RED + 'Sorry! Something went wrong with reading the provided file.')
-        try_again = input(Fore.MAGENTA + 'Would you like to try again? (Type yes|y to continue or the enter key to exit)')
+        print(Fore.RED + Style.BRIGHT + 'Sorry! Something went wrong with reading the provided file.')
+        try_again = input(Fore.MAGENTA + Style.BRIGHT + 'Would you like to try again? (Type yes|y to continue or the enter key to exit)')
         rerun_script(try_again)
 init()
