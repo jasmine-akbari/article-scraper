@@ -24,9 +24,9 @@ Requires the following installations:
 - gensim v3.8.3
 
 ## Installation
-You can install Python3 by clicking on the following link: [Download Python3](https://www.python.org/downloads/).
-You can install VS Code by clicking on the following link: [Download VS Code](https://code.visualstudio.com/download).
-You can install Homebrew by clicking on the following link: [Download Homebrew](https://brew.sh/)
+- You can install Python3 by clicking on the following link: [Download Python3](https://www.python.org/downloads/).
+- You can install VS Code by clicking on the following link: [Download VS Code](https://code.visualstudio.com/download).
+- You can install Homebrew by clicking on the following link: [Download Homebrew](https://brew.sh/)
 
 1. Clone the Repo
 To use this application you will need to clone this repository to your local machine(PC). Click on the clipboard icon to copy the URL for git cloning.
