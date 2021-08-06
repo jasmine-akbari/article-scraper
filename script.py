@@ -30,7 +30,6 @@ def init():
 
 def rerun_script(try_again):
     response = try_again.lower()
-    print(response)
 
     if response == 'yes' or response == 'y':
         init()
@@ -81,7 +80,7 @@ def create_csv(text):
         df_max_res.to_csv('./dist/article_1.csv')
         print(Fore.MAGENTA + Style.BRIGHT + 'Success! Please check this application\'s "dist" folder for the csv file created with relevant keywords!')
     except:
-        print(Fore.RED + Style.BRIGHT + 'Sorry! Something went wrong with reading the provided file.')
+        print(Fore.RED + Style.BRIGHT + 'Sorry! Something went wrong with sorting the words in the PDF File, try another document.')
         try_again = input(Fore.MAGENTA + Style.BRIGHT + 'Would you like to try again? (Type yes|y to continue or the enter key to exit)')
         rerun_script(try_again)
 init()
