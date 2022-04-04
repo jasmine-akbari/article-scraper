@@ -67,4 +67,4 @@ This is what a preview of the CSV will look like from VS Code:
 
 ## Contributions
 
-Primary resource used: [How to Extract Keywords From PDFs](https://towardsdatascience.com/how-to-extract-keywords-from-pdfs-and-arrange-in-order-of-their-weights-using-python-841556083341)
+[jasmine-akbari](https://github.com/jasmine-akbari) Please contact jasmine_akbari@amesite.com for inquiries regarding contributions.
