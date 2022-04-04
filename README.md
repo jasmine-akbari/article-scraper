@@ -67,4 +67,4 @@ This is what a preview of the CSV will look like from VS Code:
 
 ## Contributions
 
-[jasmine-akbari](https://github.com/jasmine-akbari) Please contact jasmine_akbari@amesite.com for inquiries regarding contributions.
+[github.com/jasmine-akbari](https://github.com/jasmine-akbari) Please contact jasmine_akbari@amesite.com for inquiries regarding contributions.
